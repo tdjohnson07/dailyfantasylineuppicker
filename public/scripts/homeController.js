@@ -1,19 +1,10 @@
-angular.module('dailyFantasy').controller('homeController',['$http', '$location', function($http, $location){
+angular.module('dailyFantasy').controller('homeController',['$http', '$location', 'DataService', function($http, $location, DataService){
   var vm=this;
-  function getSchedule(){
-    $http.get('/games').then(handleSuccess, handleFailure);
-  }
-  function handleSuccess(res){
-    console.log("schedule sent", res);
-  }
-  function handleFailure(res){
-    console.log(res);
-  }
   vm.fanduel = function(){
     $location.path('/fanduel');
   }
   vm.draftkings = function(){
     $location.path('/draftkings')
   }
-  getSchedule();
+  DataService.getSchedule();
 }]);

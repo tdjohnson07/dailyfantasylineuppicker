@@ -1,1 +1,6 @@
 <h2> Pick your games to play</h2>
+<label ng-repeat="game in fan.data.weeklySchedule track by $index">
+  <input type="checkbox" value="{{game}}" ng-model="fan.data.weeklySchedule[$index].picked">
+  home Team: {{game.homeTeam}} Away Team: {{game.awayTeam}} {{game.gameDate}} {{game.gameTimeET}}</br>
+</label>
+<button ng-click="fan.pickedGames()">Select Games</button>
