@@ -20,6 +20,7 @@ angular.module('dailyFantasy').controller('fanduelController',['$http', '$locati
       }
     }
     RankingsService.getPlayers();
+    $location.path('/fanduelLineup')
     console.log("RankingsService data", vm.rankings);
     console.log(DataService.data.pickedGames);
   }

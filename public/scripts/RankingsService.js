@@ -22,7 +22,7 @@ angular.module('dailyFantasy').factory('RankingsService',['$http', function($htt
     $http.get('/rankings').then(rankingsSuccess, handleFailure)
   }
   function rankingsSuccess(res){
-    data.rankings = res;
+    data.rankings = res.data;
     console.log(data.rankings);
   }
   function handleSuccess(res){

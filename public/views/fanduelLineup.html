@@ -1,0 +1,83 @@
+<h2>Pick your lineup</h2>
+<ul ng-show="fdlu.espn">
+  <h2>Qbs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.qbs">{{player.name}} {{player.team}} {{player.standard}}
+    <br>enter espn projection:<input type="number" ng-model="player.espn">
+    remove player: <input type="checkbox" ng-model="player.remove">
+  </li>
+</ul>
+<ul ng-show="fdlu.espn">
+  <h2>Rbs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.rbs">{{player.name}} {{player.team}} {{player.standard}}
+    <br>enter espn projection:<input type="number" ng-model="player.espn">
+    remove player: <input type="checkbox" ng-model="player.remove">
+  </li>
+</ul>
+<ul ng-show="fdlu.espn">
+  <h2>Wrs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.wrs">{{player.name}} {{player.team}} {{player.standard}}
+    <br>enter espn projection:<input type="number" ng-model="player.espn">
+    remove player: <input type="checkbox" ng-model="player.remove">
+  </li>
+</ul>
+<ul ng-show="fdlu.espn">
+  <h2>Tes</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.tes">{{player.name}} {{player.team}} {{player.standard}}
+  <br>enter espn projection:<input type="number" ng-model="player.espn">
+  remove player: <input type="checkbox" ng-model="player.remove">
+  </li>
+</ul>
+<ul ng-show="fdlu.espn">
+  <h2>Defs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.defs">{{player.name}} {{player.team}} {{player.standard}}
+    <br>enter espn projection:<input type="number" ng-model="player.espn">
+    remove player: <input type="checkbox" ng-model="player.remove">
+  </li>
+</ul>
+<ul ng-show="fdlu.espn">
+  <h2>Kickers</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.kicks">{{player.name}} {{player.team}} {{player.standard}}
+    <br>enter espn projection:<input type="number" ng-model="player.espn">
+    remove player: <input type="checkbox" ng-model="player.remove">
+  </li>
+</ul>
+<button ng-show="fdlu.espn" ng-click="fdlu.makeprojections()">Submit projections</button>
+
+
+<ul ng-hide="fdlu.espn">
+  <h2>Qbs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.qbs">{{player.name}} {{player.team}} {{player.projected | limitTo:4}}
+    <br>enter Value:<input type="number" ng-model="player.value">
+  </li>
+</ul>
+<ul ng-hide="fdlu.espn">
+  <h2>Rbs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.rbs">{{player.name}} {{player.team}} {{player.projected | limitTo:4}}
+    <br>enter value:<input type="number" ng-model="player.value">
+  </li>
+</ul>
+<ul ng-hide="fdlu.espn">
+  <h2>Wrs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.wrs">{{player.name}} {{player.team}} {{player.projected | limitTo:4}}
+    <br>enter value:<input type="number" ng-model="player.value">
+  </li>
+</ul>
+<ul ng-hide="fdlu.espn">
+  <h2>Tes</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.tes">{{player.name}} {{player.team}} {{player.projected | limitTo:4}}
+  <br>enter value:<input type="number" ng-model="player.value">
+  </li>
+</ul>
+<ul ng-hide="fdlu.espn">
+  <h2>Defs</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.defs">{{player.name}} {{player.team}} {{player.projected | limitTo:4}}
+    <br>enter value:<input type="number" ng-model="player.value">
+  </li>
+</ul>
+<ul ng-hide="fdlu.espn">
+  <h2>Kickers</h2>
+  <li ng-repeat="player in fdlu.pickedPlayers.kicks">{{player.name}} {{player.team}} {{player.projected | limitTo:4}}
+    <br>enter value:<input type="number" ng-model="player.value">
+  </li>
+</ul>
+<button ng-hide="fdlu.espn" ng-click="fdlu.calcLineup()">Calculate Lineups</button>
