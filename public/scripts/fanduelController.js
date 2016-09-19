@@ -16,7 +16,7 @@ angular.module('dailyFantasy').controller('fanduelController',['$http', '$locati
   vm.pickedGames = function(){
     for(var i=0; i<vm.data.weeklySchedule.length; i++){
       if(vm.data.weeklySchedule[i].picked){
-        vm.data.pickedGames.push(vm.data.weeklySchedule[i])
+        vm.data.pickedGames.push(vm.data.weeklySchedule[i]);
       }
     }
     RankingsService.getPlayers();
