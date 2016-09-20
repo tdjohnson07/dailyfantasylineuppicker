@@ -14,6 +14,7 @@ angular.module('dailyFantasy').controller('fanduelLineupController', ['$http','D
   }
   vm.calcLineup = function(){
     SecretService.calcLineup(vm.pickedPlayers);
+    $location.path('/fanduelresulsts')
   }
   // console.log('players', vm.players);
   // console.log('games', vm.games);

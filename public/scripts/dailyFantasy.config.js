@@ -25,5 +25,10 @@ angular.module('dailyFantasy').config(['$routeProvider', '$locationProvider', fu
     controller: 'draftkingsLineupController',
     controllerAs: 'dklu'
   })
+  .when('/fanduelresulsts',{
+    templateUrl: '/views/fanduelresults.html',
+    controller: 'fanduelresultsController',
+    controllerAs: 'fdr'
+  })
   $locationProvider.html5Mode(true);
 }]);
